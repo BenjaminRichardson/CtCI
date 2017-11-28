@@ -15,7 +15,7 @@ public class StringCompression{
 									"a","a"
 									};
 		for(int i=0; i<inputOutputPairs.length; i+=2){
-			if(stringCompression(inputOutputPairs[i]) == null){
+			if(stringCompression2(inputOutputPairs[i]) == null){
 				if(inputOutputPairs[i+1] != null){
 					System.out.println("Error: Failed test "+(i/2+1)+".");
 				}
@@ -49,9 +49,57 @@ public class StringCompression{
 		sb.append(previousChar);
 		sb.append(Integer.toString(count));
 		String returnVal = sb.toString();
+		// This is inefficient! do the check first
 		if(returnVal.length() > str1.length()){
 			return str1;
 		}
 		return returnVal;
+	}
+
+	/*Based on the "best" solution from the Cracking the Coding Interview book
+	First need to determine the length, then if shorter actually do the string building*/
+
+	public static String stringCompression2(String str){
+		if(str == null || str.isEmpty()){ return null; }
+		int compressedLength = compressedStringCount(str);
+		if(compressedLength >= str.length()){
+			return str;
+		}
+		StringBuilder sb = new StringBuilder(compressedLength);
+		char previousChar = str.charAt(0) ;
+		char currChar;
+		int prevCharCount = 1;
+		for(int i=1; i<str.length(); i++){
+			currChar = str.charAt(i);
+			if(currChar != previousChar){
+				sb.append(previousChar);
+				sb.append(String.valueOf(prevCharCount));
+				previousChar = currChar;
+				prevCharCount = 1;
+			}else{
+				prevCharCount++;
+			}
+		}
+		sb.append(previousChar);
+		sb.append(String.valueOf(prevCharCount));
+		return sb.toString();
+	}
+
+	public static int compressedStringCount(String str){
+		if(str==null || str.length() == 0){return 0;}
+		char lastChar = str.charAt(0);
+		int totalCount = 0;
+		int currentCount = 1;
+		for(int i=1; i<str.length(); i++){
+			if(str.charAt(i) != lastChar){
+				totalCount += 1 + String.valueOf(currentCount).length();
+				currentCount = 1;
+				lastChar = str.charAt(i);
+			}else{
+				currentCount++;
+			}
+		}
+		totalCount += 1 + String.valueOf(currentCount).length();
+		return totalCount;
 	}
 }
