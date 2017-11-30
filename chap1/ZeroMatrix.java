@@ -1,6 +1,6 @@
-package ctci;
+package ctci.chap1;
 
-import ctci.CtCILibrary.AssortedMethods;
+import ctci.chap1.ctci.chap1Library.AssortedMethods;
 
 public class ZeroMatrix{
 	
@@ -60,7 +60,7 @@ public class ZeroMatrix{
 		return matrix;
 	}
 
-	//Test methods from CtCI Github
+	//Test methods from ctci.chap1 Github
 	public static boolean matricesAreEqual(int[][] m1, int[][] m2) {
 		if (m1.length != m2.length || m1[0].length != m2[0].length) {
 			return false;

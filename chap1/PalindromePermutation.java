@@ -1,4 +1,4 @@
-package ctci;
+package ctci.chap1;
 
 /*
 *	Assumptions: 

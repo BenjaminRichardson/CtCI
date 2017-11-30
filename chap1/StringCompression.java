@@ -1,4 +1,4 @@
-package ctci;
+package ctci.chap1;
 
 /*
 * Assume only character a-z (lower case

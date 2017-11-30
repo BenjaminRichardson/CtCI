@@ -1,4 +1,4 @@
-package ctci;
+package ctci.chap1;
 
 /*
 * Note: I have assumed that the length of str fits the new string exactly.

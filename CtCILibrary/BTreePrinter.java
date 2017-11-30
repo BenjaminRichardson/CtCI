@@ -1,4 +1,4 @@
-package ctci.CtCILibrary;
+package ctci.ctciLibrary;
 
 import java.util.ArrayList;
 import java.util.Collections;

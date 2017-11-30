@@ -1,4 +1,4 @@
-package ctci;
+package ctci.chap1;
 
 public class StringRotation{
 	
@@ -36,7 +36,7 @@ public class StringRotation{
 		return isSubstring(testString,s2);
 	}
 
-	// Taken from CtCI github, we were supposed to assume we had such a function created
+	// Taken from ctci.chap1 github, we were supposed to assume we had such a function created
 	public static boolean isSubstring(String big, String small) {
 		System.out.println(big+" is big but "+small+" is small");
 		if (big.indexOf(small) >= 0) {

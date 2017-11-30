@@ -1,4 +1,4 @@
-package ctci;
+package ctci.chap1;
 
 public class RotateMatrix{
 	
@@ -42,8 +42,8 @@ public class RotateMatrix{
 
 	}
 
-	// Taken from utils in CtCI Github
-	// https://github.com/careercup/CtCI-6th-Edition/blob/master/Java/CtCILibrary/CtCILibrary/AssortedMethods.java
+	// Taken from utils in ctci.chap1 Github
+	// https://github.com/careercup/ctci.chap1-6th-Edition/blob/master/Java/ctci.chap1Library/ctci.chap1Library/AssortedMethods.java
 	public static void printMatrix(int[][] matrix) {
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {

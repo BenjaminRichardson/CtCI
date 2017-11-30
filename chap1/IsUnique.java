@@ -1,5 +1,5 @@
 
-package ctci;
+package ctci.chap1;
 import java.util.*;
 /*
 *  1.1 Is Unique: Implement an algorithm to determine if a string has all unique characters
