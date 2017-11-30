@@ -31,14 +31,14 @@ public class StringRotation{
 
 	// Based on book's answer, pretty clever if you ask me
 	public static boolean isRotation2(String s1, String s2){
-		if(s1.length() != s2.length || s1.length() < 1){ return false; }
+		if(s1.length() != s2.length() || s1.length() < 1){ return false; }
 		String testString = s1+s1;
 		return isSubstring(testString,s2);
 	}
 
 	// Taken from ctci.chap1 github, we were supposed to assume we had such a function created
 	public static boolean isSubstring(String big, String small) {
-		System.out.println(big+" is big but "+small+" is small");
+		//System.out.println(big+" is big but "+small+" is small");
 		if (big.indexOf(small) >= 0) {
 			return true;
 		} else {

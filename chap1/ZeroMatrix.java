@@ -1,6 +1,6 @@
 package ctci.chap1;
 
-import ctci.chap1.ctci.chap1Library.AssortedMethods;
+import ctci.ctciLibrary.AssortedMethods;
 
 public class ZeroMatrix{
 	
