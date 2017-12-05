@@ -1,11 +1,11 @@
 package ctci.chap3;
 
-public class StackMin{
+public class StackMin implements MyStack<Integer>{
 	
 	private class ValueAndMin{
-		public int value;
-		public int min
-		public ValueAndMin(int value,int min){
+		public Integer value;
+		public Integer min;
+		public ValueAndMin(Integer value,Integer min){
 			this.value = value;
 			this.min = min;
 		}
@@ -25,34 +25,35 @@ public class StackMin{
 		top = null;
 	}
 
-	public void push(T value){
+	public void push(Integer value){
 		ValueAndMin vam;
 		if(top == null){
 			vam = new ValueAndMin(value,value);
 			top = new StackNode(vam);
 		}else{
-			int newMin = (top.obj.min > value)? value : top.obj.min;
+			Integer newMin = (top.obj.min > value)? value : top.obj.min;
 			vam = new ValueAndMin(value, newMin);
+			int x = vam.value;
 			StackNode nextTop = new StackNode(vam);
 			nextTop.previousNode = top;
 			top = nextTop;
 		}
 	}
 
-	public int pop(){
+	public Integer pop(){
 		if(top == null){ throw new IllegalStateException("Nothing in the stack to pop.");}
 		StackNode oldTop = top;
 		top = top.previousNode;
-		return oldTop.obj.value;
+		return ((ValueAndMin)oldTop.obj).value;
 	}
 
-	public int peek(){
+	public Integer peek(){
 		if(top == null){ throw new IllegalStateException("Nothin in stack to peek.");}
 		return top.obj.value;
 	}
 
-	public int min(){
-		if(top == null){ throw new IllegalStateExcpetion("Nothing in stack");}
+	public Integer min(){
+		if(top == null){ throw new IllegalStateException("Nothing in stack");}
 		return top.obj.min;
 	}
 
